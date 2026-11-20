@@ -62,8 +62,8 @@ static char dmenumon[8]; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 
-static const char *sshutcmd[] = { "maim", "-s", "/home/thomas/Pictures/sshot.png", NULL };
-static const char *sshutallcmd[] = { "maim", "/home/thomas/Pictures/sshot.png", NULL };
+static const char *sshotcmd[] = { "maim", "-s", "/home/thomas/Pictures/sshot.png", NULL };
+static const char *sshotallcmd[] = { "maim", "/home/thomas/Pictures/sshot.png", NULL };
 
 static const char *incbrtcmd[] = { "brightnessctl", "set", "10%+", NULL };
 static const char *decbrtcmd[] = { "brightnessctl", "set", "10%-", NULL };
@@ -123,8 +123,8 @@ static const Key keys[] = {
 	//{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
     
     //Taking screenshot
-    { MODKEY,                       XK_s,      spawn,          {.v = sshutcmd } },
-    { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = sshutallcmd } },
+    { MODKEY,                       XK_s,      spawn,          {.v = sshotcmd } },
+    { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = sshotallcmd } },
 	
     //Switching throu tags
     TAGKEYS(                        XK_1,                      0)
