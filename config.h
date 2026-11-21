@@ -71,6 +71,8 @@ static const char *decbrtcmd[] = { "brightnessctl", "set", "10%-", NULL };
 static const char *incvolcmd[] = { "amixer", "set", "Master", "5%+", NULL };
 static const char *decvolcmd[] = { "amixer", "set", "Master", "5%-", NULL };
 
+static const char *lockcmd[] = { "slock", NULL };
+
 //?TODO?: Would i not have to use += or -=
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -90,7 +92,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_j,      setmfact,       {.f = +0.05} },
 
     //Switch throu windows on a tag
-    //TODO: use arrowkeys
     { MODKEY,                       XK_q,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_w,      focusstack,     {.i = +1 } },
 	
@@ -108,9 +109,12 @@ static const Key keys[] = {
     //Toggle floating
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 
+    //Lockscreen
+    { MODKEY,                       XK_l,      spawn,          {.v = lockcmd } },
+
     //Control brighness
-    { 0,                          XF86XK_MonBrightnessDown, spawn, {.v = decbrtcmd } },
-    { 0,                          XF86XK_MonBrightnessUp,   spawn, {.v = incbrtcmd } },
+    { 0,                            XF86XK_MonBrightnessDown, spawn, {.v = decbrtcmd } },
+    { 0,                            XF86XK_MonBrightnessUp,   spawn, {.v = incbrtcmd } },
 
     //Control Volume
 	{ 0,                          XF86XK_AudioLowerVolume, spawn, {.v = decvolcmd } },
