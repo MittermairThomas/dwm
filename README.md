@@ -7,4 +7,3 @@ xsetroot
 maim
 brightnessctl
 amixer
-slock
