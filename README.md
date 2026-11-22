@@ -8,3 +8,7 @@ maim
 brightnessctl
 amixer
 picom
+
+Optional Pacages:
+batsignal
+dunst
