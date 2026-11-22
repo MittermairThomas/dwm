@@ -7,3 +7,4 @@ xsetroot
 maim
 brightnessctl
 amixer
+picom
